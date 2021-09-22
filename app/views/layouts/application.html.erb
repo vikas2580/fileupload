@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UtilizeTest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render "layouts/header" %>
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-<%= type%>">
+        <%= msg %>
+      </div>
+    <% end %>
+    <section class="pt-4">
+      <div class="container px-lg-5">
+        <%= yield %>
+      </div>
+    </section>
+    <%= render "layouts/footer" %>
+  </body>
+</html>
